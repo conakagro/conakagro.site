@@ -1,1 +1,173 @@
-<h1>Bienvenue sur Akas Group</h1>
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKAS GROUP | Excellence & Solutions</title>
+    <!-- Intégration de Tailwind CSS pour un design moderne sans feuilles de style lourdes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0f294a',   /* Bleu marine professionnel */
+                            gold: '#cca43b',   /* Doré élégant pour les accents */
+                            light: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- En-tête / Navigation -->
+    <header class="fixed top-0 w-full bg-brand-blue/95 backdrop-blur text-white z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Emplacement Logo Vectoriel (SVG) -->
+            <a href="#" class="flex items-center space-x-3">
+                <!-- Remplacer 'logo.svg' par le nom de votre fichier logo dans votre dépôt -->
+                <img src="images/logo.svg" alt="AKAS GROUP Logo" class="h-10 w-auto text-brand-gold" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+                <span id="logo-text" class="text-xl font-bold tracking-wider text-brand-gold">AKAS GROUP</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                <a href="#accueil" class="hover:text-brand-gold transition duration-300">Accueil</a>
+                <a href="#services" class="hover:text-brand-gold transition duration-300">Services</a>
+                <a href="#portfolio" class="hover:text-brand-gold transition duration-300">Réalisations</a>
+                <a href="#contact" class="bg-brand-gold text-brand-blue px-4 py-2 rounded font-semibold hover:bg-white hover:text-brand-blue transition duration-300">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section 1 : Accueil / Héros -->
+    <section id="accueil" class="relative h-screen flex items-center justify-center bg-brand-blue text-white overflow-hidden pt-16">
+        <!-- Image de fond avec opacité pour lisibilité du texte -->
+        <div class="absolute inset-0 z-0">
+            <!-- Remplacer l'URL par votre photo optimisée (ex: images/hero.jpg) -->
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80" alt="Infrastructures de confiance" class="w-full h-full object-cover opacity-20">
+        </div>
+        <div class="relative max-w-4xl mx-auto text-center px-6 z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+                Bâtir l'Avenir avec <span class="text-brand-gold">Rigueur</span> et <span class="text-brand-gold">Vision</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+                AKAS GROUP déploie des solutions stratégiques et opérationnelles d'excellence pour accompagner la croissance de vos projets de grande envergure.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#services" class="bg-brand-gold text-brand-blue font-bold px-8 py-3 rounded shadow hover:bg-white transition duration-300 text-center">Nos Services</a>
+                <a href="#contact" class="border border-white/40 hover:border-brand-gold text-white font-bold px-8 py-3 rounded hover:text-brand-gold transition duration-300 text-center">Nous Contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2 : Services -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl mb-4">Nos Domaines d'Expertise</h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="p-8 bg-brand-light rounded-lg border border-slate-100 hover:shadow-lg transition duration-300">
+                    <div class="text-brand-gold mb-4 text-3xl">📊</div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-3">Conseil Stratégique</h3>
+                    <p class="text-slate-600 leading-relaxed">Analyse de marché, optimisation des processus métier et accompagnement sur mesure dans vos transitions majeures.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="p-8 bg-brand-light rounded-lg border border-slate-100 hover:shadow-lg transition duration-300">
+                    <div class="text-brand-gold mb-4 text-3xl">🏗️</div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-3">Gestion de Projets</h3>
+                    <p class="text-slate-600 leading-relaxed">Pilotage rigoureux, respect des jalons critiques et coordination technique des opérations d'infrastructure.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="p-8 bg-brand-light rounded-lg border border-slate-100 hover:shadow-lg transition duration-300">
+                    <div class="text-brand-gold mb-4 text-3xl">🌐</div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-3">Opérations Commerciales</h3>
+                    <p class="text-slate-600 leading-relaxed">Solutions logistiques avancées et facilitation des échanges de marchandises et import-export à l'échelle internationale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3 : Portfolio Photos (Réalisations) -->
+    <section id="portfolio" class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl mb-4">Nos Réalisations</h2>
+                <p class="text-slate-500 mb-4">La démonstration de nos capacités opérationnelles à travers le monde.</p>
+                <div class="w-24 h-1 bg-brand-gold mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Photo Projet 1 -->
+                <div class="group relative overflow-hidden bg-brand-blue rounded-lg shadow-md aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80" alt="Infrastructure moderne" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-90 group-hover:opacity-60">
+                    <div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-brand-blue via-brand-blue/20 to-transparent">
+                        <h4 class="text-lg font-bold text-white mb-1">Supervision Technique</h4>
+                        <p class="text-sm text-brand-gold">Infrastructures & Logistique</p>
+                    </div>
+                </div>
+                <!-- Photo Projet 2 -->
+                <div class="group relative overflow-hidden bg-brand-blue rounded-lg shadow-md aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Logistique internationale" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-90 group-hover:opacity-60">
+                    <div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-brand-blue via-brand-blue/20 to-transparent">
+                        <h4 class="text-lg font-bold text-white mb-1">Hub de Distribution</h4>
+                        <p class="text-sm text-brand-gold">Import-Export International</p>
+                    </div>
+                </div>
+                <!-- Photo Projet 3 -->
+                <div class="group relative overflow-hidden bg-brand-blue rounded-lg shadow-md aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Consulting entreprise" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-90 group-hover:opacity-60">
+                    <div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-brand-blue via-brand-blue/20 to-transparent">
+                        <h4 class="text-lg font-bold text-white mb-1">Stratégie d'Entreprise</h4>
+                        <p class="text-sm text-brand-gold">Analyses & Business Économie</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4 : Contact (Via Formspree) -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl mb-4">Contactez AKAS GROUP</h2>
+                <p class="text-slate-500">Une question ou une proposition de partenariat ? Nos équipes vous répondent avec réactivité.</p>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mt-4"></div>
+            </div>
+            
+            <!-- FORMULAIRE FORMSPREE GRATUIT -->
+            <!-- IMPORTANT : Remplacez "VOTRE_ID_FORMSPREE" par la clé finale que vous donnera Formspree -->
+            <form action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST" class="space-y-6 bg-brand-light p-8 rounded-xl border border-slate-100 shadow-sm">
+                <div>
+                    <label for="name" class="block text-sm font-semibold text-brand-blue mb-2">Nom complet / Entreprise</label>
+                    <input type="text" name="name" id="name" required class="w-full px-4 py-3 rounded border border-slate-200 focus:outline-none focus:border-brand-gold transition">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-semibold text-brand-blue mb-2">Adresse email professionnelle</label>
+                    <input type="email" name="email" id="email" required class="w-full px-4 py-3 rounded border border-slate-200 focus:outline-none focus:border-brand-gold transition">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-semibold text-brand-blue mb-2">Votre message</label>
+                    <textarea name="message" id="message" rows="5" required class="w-full px-4 py-3 rounded border border-slate-200 focus:outline-none focus:border-brand-gold transition"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-brand-blue hover:bg-brand-gold text-white hover:text-brand-blue font-bold py-3 px-6 rounded shadow transition duration-300">
+                    Envoyer la demande
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="bg-brand-blue text-slate-400 py-12 text-sm border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p>&copy; 2026 AKAS GROUP. Tous droits réservés.</p>
+            <p class="text-xs text-slate-600">Infrastructure Sécurisée Isolée</p>
+        </div>
+    </footer>
+
+</body>
+</html>
