@@ -55,14 +55,14 @@
             <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80" alt="Immeubles d'affaires" class="w-full h-full object-cover opacity-25 scale-105 transition-transform duration-[5000ms]">
             <div class="absolute inset-0 bg-gradient-to-b from-brand-blue/50 via-brand-blue/80 to-brand-blue"></div>
         </div>
-        <div class="relative max-w-4xl mx-auto text-center px-6 z-10" data-aos="fade-up" data-aos-duration="1200">
-            <!-- Nom de l'entreprise au-dessus du titre principal -->
-            <span class="block text-brand-cyan font-extrabold uppercase tracking-[0.25em] text-sm md:text-base mb-4 hover:scale-105 transform transition duration-300 cursor-default">AKAS GROUP</span>
+        <div class="relative max-w-7xl mx-auto text-center px-6 z-10" data-aos="fade-up" data-aos-duration="1200">
+            <!-- Nom de l'entreprise doublé en taille par rapport au titre principal (text-8xl sur grand écran) -->
+            <span class="block text-brand-cyan font-black uppercase tracking-[0.25em] text-5xl md:text-8xl lg:text-9xl mb-8 hover:scale-105 transform transition duration-300 cursor-default">AKAS GROUP</span>
             
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight hover:scale-[1.02] transform transition duration-500 cursor-default">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-8 leading-tight hover:scale-[1.02] transform transition duration-500 cursor-default text-slate-200">
                 Bâtir l'Avenir avec <br><span class="text-brand-silver hover:text-brand-cyan transition duration-300">Rigueur</span> et <span class="text-brand-silver hover:text-brand-cyan transition duration-300">Vision</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto font-light hover:text-white transition duration-300 cursor-default">
+            <p class="text-lg md:text-xl text-slate-300 mb-12 max-w-2xl mx-auto font-light hover:text-white transition duration-300 cursor-default">
                 AKAS GROUP déploie des solutions stratégiques et opérationnelles de premier plan pour catalyser la réussite de vos projets d'envergure.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
@@ -72,7 +72,7 @@
         </div>
     </section>
 
-    <!-- Section 2 : Services (Apparition décalée dynamique) -->
+    <!-- Section 2 : Services (Mise à jour stricte selon les statuts) -->
     <section id="services" class="py-32 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20" data-aos="fade-up">
@@ -81,38 +81,41 @@
                 <div class="w-16 h-1 bg-brand-cyan mx-auto rounded-full"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- Service 1 -->
+                <!-- Service 1 : BTP & Infrastructures -->
                 <div class="p-10 bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group" data-aos="fade-up" data-aos-delay="100">
-                    <!-- Icone agrandie (w-20 h-20 & text-4xl) et habillée de nuances bleutées -->
                     <div class="w-20 h-20 bg-brand-blue text-brand-cyan rounded-xl flex items-center justify-center text-4xl mb-8 group-hover:bg-brand-cyan group-hover:text-brand-blue transition duration-300 shadow-md">
-                        <i class="fa-solid fa-chart-line"></i>
+                        <i class="fa-solid fa-helmet-safety"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-brand-blue mb-4 group-hover:text-brand-cyan transition duration-300">Conseil Stratégique</h3>
-                    <p class="text-slate-600 leading-relaxed font-light group-hover:text-slate-900 transition duration-300">Analyses approfondies, optimisation rigoureuse des processus décisionnels et pilotage des feuilles de route complexes.</p>
+                    <h3 class="text-2xl font-bold text-brand-blue mb-4 group-hover:text-brand-cyan transition duration-300">Bâtiment & Travaux Publics</h3>
+                    <p class="text-slate-600 leading-relaxed font-light group-hover:text-slate-900 transition duration-300">
+                        Tous travaux de construction, bâtiment, travaux publics, génie civil, assainissement et électrification BT, MT et HT.[cite: 1]
+                    </p>
                 </div>
-                <!-- Service 2 -->
+                <!-- Service 2 : Conseil & Technologies -->
                 <div class="p-10 bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group" data-aos="fade-up" data-aos-delay="200">
-                    <!-- Icone agrandie (w-20 h-20 & text-4xl) -->
                     <div class="w-20 h-20 bg-brand-blue text-brand-cyan rounded-xl flex items-center justify-center text-4xl mb-8 group-hover:bg-brand-cyan group-hover:text-brand-blue transition duration-300 shadow-md">
-                        <i class="fa-solid fa-layer-group"></i>
+                        <i class="fa-solid fa-laptop-code"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-brand-blue mb-4 group-hover:text-brand-cyan transition duration-300">Gestion de Projets</h3>
-                    <p class="text-slate-600 leading-relaxed font-light group-hover:text-slate-900 transition duration-300">Maîtrise absolue de la chaîne des coûts, planification stratégique et ingénierie de projets complexes.</p>
+                    <h3 class="text-2xl font-bold text-brand-blue mb-4 group-hover:text-brand-cyan transition duration-300">Conseil & Technologies</h3>
+                    <p class="text-slate-600 leading-relaxed font-light group-hover:text-slate-900 transition duration-300">
+                        Conseil, gestion et management de toutes entreprises, ainsi que l'achat, la vente et la fourniture de produits et services informatiques.[cite: 1]
+                    </p>
                 </div>
-                <!-- Service 3 -->
+                <!-- Service 3 : Négoce & Logistique -->
                 <div class="p-10 bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group" data-aos="fade-up" data-aos-delay="300">
-                    <!-- Icone agrandie (w-20 h-20 & text-4xl) -->
                     <div class="w-20 h-20 bg-brand-blue text-brand-cyan rounded-xl flex items-center justify-center text-4xl mb-8 group-hover:bg-brand-cyan group-hover:text-brand-blue transition duration-300 shadow-md">
-                        <i class="fa-solid fa-earth-africa"></i>
+                        <i class="fa-solid fa-truck-ramp-box"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-brand-blue mb-4 group-hover:text-brand-cyan transition duration-300">Négoce International</h3>
-                    <p class="text-slate-600 leading-relaxed font-light group-hover:text-slate-900 transition duration-300">Solutions globales de supply chain, intermédiation sécurisée et import-export à haute valeur ajoutée.</p>
+                    <h3 class="text-2xl font-bold text-brand-blue mb-4 group-hover:text-brand-cyan transition duration-300">Négoce & Logistique</h3>
+                    <p class="text-slate-600 leading-relaxed font-light group-hover:text-slate-900 transition duration-300">
+                        Commerce général, import-export, achat et vente de produits divers, prestations de services, transport et logistique.[cite: 1]
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 3 : Portfolio Photos (Effet d'apparition en grille) -->
+    <!-- Section 3 : Portfolio Photos (Mise en conformité des images avec les statuts) -->
     <section id="portfolio" class="py-32 bg-brand-light">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20" data-aos="fade-up">
@@ -121,28 +124,28 @@
                 <div class="w-16 h-1 bg-brand-cyan mx-auto rounded-full"></div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Projet 1 -->
+                <!-- Projet 1 : Chantiers BTP -->
                 <div class="group relative overflow-hidden bg-brand-dark rounded-xl shadow-md aspect-[4/3]" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80" alt="Supervision technique" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90 group-hover:opacity-40">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80" alt="Chantier de génie civil" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90 group-hover:opacity-40">
                     <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-transparent">
-                        <h4 class="text-xl font-bold text-white mb-1 group-hover:text-brand-cyan group-hover:scale-105 transform transition duration-300 origin-left">Supervision Technique</h4>
-                        <p class="text-sm text-brand-silver tracking-wide uppercase font-medium">Infrastructures urbaines</p>
+                        <h4 class="text-xl font-bold text-white mb-1 group-hover:text-brand-cyan group-hover:scale-105 transform transition duration-300 origin-left">Génie Civil & BTP</h4>
+                        <p class="text-sm text-brand-silver tracking-wide uppercase font-medium">Infrastructures & Construction</p>[cite: 1]
                     </div>
                 </div>
-                <!-- Projet 2 -->
+                <!-- Projet 2 : Technologies & Management -->
                 <div class="group relative overflow-hidden bg-brand-dark rounded-xl shadow-md aspect-[4/3]" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Hub de distribution" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90 group-hover:opacity-40">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Solutions informatiques et conseil" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90 group-hover:opacity-40">
                     <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-transparent">
-                        <h4 class="text-xl font-bold text-white mb-1 group-hover:text-brand-cyan group-hover:scale-105 transform transition duration-300 origin-left">Hub Logistique</h4>
-                        <p class="text-sm text-brand-silver tracking-wide uppercase font-medium">Opérations d'importation</p>
+                        <h4 class="text-xl font-bold text-white mb-1 group-hover:text-brand-cyan group-hover:scale-105 transform transition duration-300 origin-left">Solutions Informatiques</h4>
+                        <p class="text-sm text-brand-silver tracking-wide uppercase font-medium">Fourniture IT & Management</p>[cite: 1]
                     </div>
                 </div>
-                <!-- Projet 3 -->
+                <!-- Projet 3 : Import-Export & Transport -->
                 <div class="group relative overflow-hidden bg-brand-dark rounded-xl shadow-md aspect-[4/3]" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Conseil d'entreprise" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90 group-hover:opacity-40">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80" alt="Logistique de fret et import export" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90 group-hover:opacity-40">
                     <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-transparent">
-                        <h4 class="text-xl font-bold text-white mb-1 group-hover:text-brand-cyan group-hover:scale-105 transform transition duration-300 origin-left">Stratégie Corporate</h4>
-                        <p class="text-sm text-brand-silver tracking-wide uppercase font-medium">Analyse & Performance</p>
+                        <h4 class="text-xl font-bold text-white mb-1 group-hover:text-brand-cyan group-hover:scale-105 transform transition duration-300 origin-left">Import-Export & Fret</h4>
+                        <p class="text-sm text-brand-silver tracking-wide uppercase font-medium">Transport & Commerce Général</p>[cite: 1]
                     </div>
                 </div>
             </div>
@@ -215,9 +218,9 @@
             <div class="space-y-4">
                 <h4 class="text-white font-bold tracking-wider text-base uppercase cursor-default">Expertises</h4>
                 <ul class="space-y-2 text-sm font-light">
-                    <li class="flex items-center hover:text-brand-cyan transition duration-300 cursor-default"><i class="fa-solid fa-circle text-[6px] mr-2 text-brand-cyan"></i> Stratégie Métier</li>
-                    <li class="flex items-center hover:text-brand-cyan transition duration-300 cursor-default"><i class="fa-solid fa-circle text-[6px] mr-2 text-brand-cyan"></i> Pilotage d'Infrastructure</li>
-                    <li class="flex items-center hover:text-brand-cyan transition duration-300 cursor-default"><i class="fa-solid fa-circle text-[6px] mr-2 text-brand-cyan"></i> Supply Chain Globale</li>
+                    <li class="flex items-center hover:text-brand-cyan transition duration-300 cursor-default"><i class="fa-solid fa-circle text-[6px] mr-2 text-brand-cyan"></i> Bâtiment & BTP</li>[cite: 1]
+                    <li class="flex items-center hover:text-brand-cyan transition duration-300 cursor-default"><i class="fa-solid fa-circle text-[6px] mr-2 text-brand-cyan"></i> Conseil & Technologies</li>[cite: 1]
+                    <li class="flex items-center hover:text-brand-cyan transition duration-300 cursor-default"><i class="fa-solid fa-circle text-[6px] mr-2 text-brand-cyan"></i> Négoce & Logistique</li>[cite: 1]
                 </ul>
             </div>
 
