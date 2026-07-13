@@ -37,13 +37,13 @@
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="flex items-center space-x-3 group">
                 <img src="images/logo.svg" alt="AKAS GROUP" class="h-10 w-auto text-brand-gold group-hover:scale-105 transition duration-300" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
-                <span id="logo-text" class="text-xl font-bold tracking-wider text-brand-gold">AKAS GROUP</span>
+                <span id="logo-text" class="text-xl font-bold tracking-wider text-brand-gold group-hover:text-white transition duration-300">AKAS GROUP</span>
             </a>
             <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide items-center">
-                <a href="#accueil" class="hover:text-brand-gold transition duration-300">Accueil</a>
-                <a href="#services" class="hover:text-brand-gold transition duration-300">Services</a>
-                <a href="#portfolio" class="hover:text-brand-gold transition duration-300">Réalisations</a>
-                <a href="#contact" class="bg-brand-gold text-brand-blue px-5 py-2.5 rounded font-bold hover:bg-white hover:text-brand-blue transition duration-300 shadow-md">Contact</a>
+                <a href="#accueil" class="hover:text-brand-gold hover:scale-105 transform transition duration-300">Accueil</a>
+                <a href="#services" class="hover:text-brand-gold hover:scale-105 transform transition duration-300">Services</a>
+                <a href="#portfolio" class="hover:text-brand-gold hover:scale-105 transform transition duration-300">Réalisations</a>
+                <a href="#contact" class="bg-brand-gold text-brand-blue px-5 py-2.5 rounded font-bold hover:bg-white hover:text-brand-blue hover:scale-105 transform transition duration-300 shadow-md">Contact</a>
             </nav>
         </div>
     </header>
@@ -55,73 +55,52 @@
             <div class="absolute inset-0 bg-gradient-to-b from-brand-blue/50 via-brand-blue/80 to-brand-blue"></div>
         </div>
         <div class="relative max-w-4xl mx-auto text-center px-6 z-10" data-aos="fade-up" data-aos-duration="1200">
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                Bâtir l'Avenir avec <br><span class="text-brand-gold">Rigueur</span> et <span class="text-brand-gold">Vision</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight hover:scale-[1.02] transform transition duration-500 cursor-default">
+                Bâtir l'Avenir avec <br><span class="text-brand-gold hover:text-white transition duration-300">Rigueur</span> et <span class="text-brand-gold hover:text-white transition duration-300">Vision</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto font-light">
+            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto font-light hover:text-white transition duration-300 cursor-default">
                 AKAS GROUP déploie des solutions stratégiques et opérationnelles de premier plan pour catalyser la réussite de vos projets d'envergure.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#services" class="bg-brand-gold text-brand-blue font-bold px-8 py-3.5 rounded shadow-lg hover:bg-white transition duration-300 text-center">Découvrir nos services</a>
-                <a href="#contact" class="border border-white/30 hover:border-brand-gold text-white font-bold px-8 py-3.5 rounded hover:text-brand-gold hover:bg-white/5 transition duration-300 text-center">Collaborer avec nous</a>
+                <a href="#services" class="bg-brand-gold text-brand-blue font-bold px-8 py-3.5 rounded shadow-lg hover:bg-white hover:scale-105 transform transition duration-300 text-center">Découvrir nos services</a>
+                <a href="#contact" class="border border-white/30 hover:border-brand-gold text-white font-bold px-8 py-3.5 rounded hover:text-brand-gold hover:bg-white/5 hover:scale-105 transform transition duration-300 text-center">Collaborer avec nous</a>
             </div>
         </div>
     </section>
 
-    <!-- Section 2 : Services (Mise à jour selon l'Objet Social Statutaire) -->
+    <!-- Section 2 : Services (Apparition décalée dynamique) -->
     <section id="services" class="py-32 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20" data-aos="fade-up">
-                <span class="text-brand-gold font-bold uppercase tracking-widest text-xs">Notre Expertise</span>
-                <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl mt-2 mb-4">Nos Domaines d'Intervention</h2>
+                <span class="text-brand-gold font-bold uppercase tracking-widest text-xs hover:text-brand-blue transition duration-300 cursor-default">Notre Expertise</span>
+                <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl mt-2 mb-4 hover:scale-105 transform transition duration-300 cursor-default">Nos Domaines d'Intervention</h2>
                 <div class="w-16 h-1 bg-brand-gold mx-auto rounded-full"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                
-                <!-- Pôle 1 : BTP & Infrastructures -->
-                <div class="p-10 bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                <!-- Service 1 -->
+                <div class="p-10 bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-14 h-14 bg-brand-blue text-brand-gold rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-gold group-hover:text-brand-blue transition duration-300 shadow-md">
-                        <i class="fa-solid fa-helmet-safety"></i>
+                        <i class="fa-solid fa-chart-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-4">BTP & Infrastructures</h3>
-                    <p class="text-slate-600 leading-relaxed font-light mb-4">
-                        Tous travaux de construction, bâtiment, travaux publics, génie civil et électrification BT, MT et HT.[cite: 1]
-                    </p>
-                    <div class="pt-4 border-t border-slate-200/60 text-xs font-medium text-brand-gold uppercase tracking-wider">
-                        <i class="fa-solid fa-truck-pickup mr-1"></i> Location de matériels de construction[cite: 1]
-                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-4 group-hover:text-brand-gold transition duration-300">Conseil Stratégique</h3>
+                    <p class="text-slate-600 leading-relaxed font-light group-hover:text-slate-900 transition duration-300">Analyses approfondies, optimisation rigoureuse des processus décisionnels et pilotage des feuilles de route complexes.</p>
                 </div>
-
-                <!-- Pôle 2 : Conseil, Management & Technologies -->
-                <div class="p-10 bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                <!-- Service 2 -->
+                <div class="p-10 bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-14 h-14 bg-brand-blue text-brand-gold rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-gold group-hover:text-brand-blue transition duration-300 shadow-md">
-                        <i class="fa-solid fa-laptop-code"></i>
+                        <i class="fa-solid fa-layer-group"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-4">Conseil, Management & Tech</h3>
-                    <p class="text-slate-600 leading-relaxed font-light mb-4">
-                        Conseil, gestion et management de toutes entreprises, y compris étrangères.[cite: 1]
-                    </p>
-                    <div class="pt-4 border-t border-slate-200/60 text-xs font-medium text-brand-gold uppercase tracking-wider">
-                        <i class="fa-solid fa-desktop mr-1"></i> Produits, matériels, logiciels informatiques & mobiliers de bureau[cite: 1]
-                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-4 group-hover:text-brand-gold transition duration-300">Gestion de Projets</h3>
+                    <p class="text-slate-600 leading-relaxed font-light group-hover:text-slate-900 transition duration-300">Maîtrise absolue de la chaîne des coûts, planification stratégique et ingénierie de projets complexes.</p>
                 </div>
-
-                <!-- Pôle 3 : Commerce Général & Services Divers -->
-                <div class="p-10 bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                <!-- Service 3 -->
+                <div class="p-10 bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group" data-aos="fade-up" data-aos-delay="300">
                     <div class="w-14 h-14 bg-brand-blue text-brand-gold rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-gold group-hover:text-brand-blue transition duration-300 shadow-md">
-                        <i class="fa-solid fa-boxes-stacked"></i>
+                        <i class="fa-solid fa-earth-africa"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-4">Commerce Général & Divers</h3>
-                    <p class="text-slate-600 leading-relaxed font-light mb-4">
-                        Import-export, transport, logistique, prestations de service et achat/vente de produits divers.[cite: 1]
-                    </p>
-                    <div class="pt-4 border-t border-slate-200/60 text-xs text-slate-500 font-light flex flex-wrap gap-x-3 gap-y-1">
-                        <span><i class="fa-solid fa-seedling text-brand-gold/60 mr-1"></i> Agriculture & Élevage</span>[cite: 1]
-                        <span><i class="fa-solid fa-faucet-drip text-brand-gold/60 mr-1"></i> Assainissement</span>[cite: 1]
-                        <span><i class="fa-solid fa-broom text-brand-gold/60 mr-1"></i> Entretien & Espaces verts</span>[cite: 1]
-                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-4 group-hover:text-brand-gold transition duration-300">Négoce International</h3>
+                    <p class="text-slate-600 leading-relaxed font-light group-hover:text-slate-900 transition duration-300">Solutions globales de supply chain, intermédiation sécurisée et import-export à haute valeur ajoutée.</p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -130,8 +109,8 @@
     <section id="portfolio" class="py-32 bg-brand-light">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20" data-aos="fade-up">
-                <span class="text-brand-gold font-bold uppercase tracking-widest text-xs">Portfolio</span>
-                <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl mt-2 mb-4">Nos Réalisations</h2>
+                <span class="text-brand-gold font-bold uppercase tracking-widest text-xs hover:text-brand-blue transition duration-300 cursor-default">Portfolio</span>
+                <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl mt-2 mb-4 hover:scale-105 transform transition duration-300 cursor-default">Nos Réalisations</h2>
                 <div class="w-16 h-1 bg-brand-gold mx-auto rounded-full"></div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -139,7 +118,7 @@
                 <div class="group relative overflow-hidden bg-brand-dark rounded-xl shadow-md aspect-[4/3]" data-aos="zoom-in" data-aos-delay="100">
                     <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80" alt="Supervision technique" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90 group-hover:opacity-40">
                     <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-transparent">
-                        <h4 class="text-xl font-bold text-white mb-1">Supervision Technique</h4>
+                        <h4 class="text-xl font-bold text-white mb-1 group-hover:text-brand-gold group-hover:scale-105 transform transition duration-300 origin-left">Supervision Technique</h4>
                         <p class="text-sm text-brand-gold tracking-wide uppercase font-medium">Infrastructures urbaines</p>
                     </div>
                 </div>
@@ -147,7 +126,7 @@
                 <div class="group relative overflow-hidden bg-brand-dark rounded-xl shadow-md aspect-[4/3]" data-aos="zoom-in" data-aos-delay="200">
                     <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Hub de distribution" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90 group-hover:opacity-40">
                     <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-transparent">
-                        <h4 class="text-xl font-bold text-white mb-1">Hub Logistique</h4>
+                        <h4 class="text-xl font-bold text-white mb-1 group-hover:text-brand-gold group-hover:scale-105 transform transition duration-300 origin-left">Hub Logistique</h4>
                         <p class="text-sm text-brand-gold tracking-wide uppercase font-medium">Opérations d'importation</p>
                     </div>
                 </div>
@@ -155,7 +134,7 @@
                 <div class="group relative overflow-hidden bg-brand-dark rounded-xl shadow-md aspect-[4/3]" data-aos="zoom-in" data-aos-delay="300">
                     <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Conseil d'entreprise" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90 group-hover:opacity-40">
                     <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-transparent">
-                        <h4 class="text-xl font-bold text-white mb-1">Stratégie Corporate</h4>
+                        <h4 class="text-xl font-bold text-white mb-1 group-hover:text-brand-gold group-hover:scale-105 transform transition duration-300 origin-left">Stratégie Corporate</h4>
                         <p class="text-sm text-brand-gold tracking-wide uppercase font-medium">Analyse & Performance</p>
                     </div>
                 </div>
@@ -167,12 +146,12 @@
     <section id="contact" class="py-32 bg-white">
         <div class="max-w-3xl mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-brand-gold font-bold uppercase tracking-widest text-xs">Partenariat</span>
-                <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl mt-2 mb-4">Formulaire de Liaison</h2>
+                <span class="text-brand-gold font-bold uppercase tracking-widest text-xs hover:text-brand-blue transition duration-300 cursor-default">Partenariat</span>
+                <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl mt-2 mb-4 hover:scale-105 transform transition duration-300 cursor-default">Formulaire de Liaison</h2>
                 <div class="w-16 h-1 bg-brand-gold mx-auto rounded-full"></div>
             </div>
             
-            <form action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST" class="space-y-6 bg-brand-light p-8 md:p-10 rounded-2xl border border-slate-100 shadow-md" data-aos="fade-up">
+            <form action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST" class="space-y-6 bg-brand-light p-8 md:p-10 rounded-2xl border border-slate-100 shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up">
                 <div>
                     <label for="name" class="block text-sm font-semibold text-brand-blue mb-2">Identité ou Raison sociale</label>
                     <div class="relative">
@@ -191,7 +170,7 @@
                     <label for="message" class="block text-sm font-semibold text-brand-blue mb-2">Expression de votre besoin</label>
                     <textarea name="message" id="message" rows="5" required class="w-full p-4 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold bg-white transition" placeholder="Détaillez votre demande ici..."></textarea>
                 </div>
-                <button type="submit" class="w-full bg-brand-blue hover:bg-brand-gold text-white hover:text-brand-blue font-bold py-4 rounded-xl shadow-md transition duration-300 tracking-wide uppercase text-sm">
+                <button type="submit" class="w-full bg-brand-blue hover:bg-brand-gold text-white hover:text-brand-blue font-bold py-4 rounded-xl shadow-md hover:scale-[1.02] transform transition duration-300 tracking-wide uppercase text-sm">
                     Transmettre la requête
                 </button>
             </form>
@@ -204,48 +183,48 @@
         <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
             <!-- Colonne 1 : À propos corporatif -->
             <div class="space-y-4">
-                <h4 class="text-white font-bold tracking-wider text-base uppercase">AKAS GROUP</h4>
-                <p class="text-sm text-slate-400 font-light leading-relaxed">
+                <h4 class="text-white font-bold tracking-wider text-base uppercase hover:text-brand-gold transition duration-300 cursor-default">AKAS GROUP</h4>
+                <p class="text-sm text-slate-400 font-light leading-relaxed hover:text-slate-200 transition duration-300 cursor-default">
                     Société de conseil, ingénierie de projets et négoce international engagée dans la réussite de vos chantiers stratégiques.
                 </p>
                 <div class="flex space-x-4 text-slate-400 pt-2">
-                    <a href="#" class="hover:text-brand-gold transition text-lg"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#" class="hover:text-brand-gold transition text-lg"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-brand-gold hover:scale-120 transform transition text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-brand-gold hover:scale-120 transform transition text-lg"><i class="fa-brands fa-x-twitter"></i></a>
                 </div>
             </div>
             
             <!-- Colonne 2 : Liens rapides -->
             <div class="space-y-4">
-                <h4 class="text-white font-bold tracking-wider text-base uppercase">Navigation</h4>
+                <h4 class="text-white font-bold tracking-wider text-base uppercase cursor-default">Navigation</h4>
                 <ul class="space-y-2 text-sm font-light">
-                    <li><a href="#accueil" class="hover:text-brand-gold transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-gold/60"></i> Accueil</a></li>
-                    <li><a href="#services" class="hover:text-brand-gold transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-gold/60"></i> Nos Services</a></li>
-                    <li><a href="#portfolio" class="hover:text-brand-gold transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-gold/60"></i> Réalisations</a></li>
-                    <li><a href="#contact" class="hover:text-brand-gold transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-gold/60"></i> Contact</a></li>
+                    <li><a href="#accueil" class="hover:text-brand-gold hover:translate-x-2 transform transition inline-flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-gold/60"></i> Accueil</a></li>
+                    <li><a href="#services" class="hover:text-brand-gold hover:translate-x-2 transform transition inline-flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-gold/60"></i> Nos Services</a></li>
+                    <li><a href="#portfolio" class="hover:text-brand-gold hover:translate-x-2 transform transition inline-flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-gold/60"></i> Réalisations</a></li>
+                    <li><a href="#contact" class="hover:text-brand-gold hover:translate-x-2 transform transition inline-flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-gold/60"></i> Contact</a></li>
                 </ul>
             </div>
 
             <!-- Colonne 3 : Domaines clés -->
             <div class="space-y-4">
-                <h4 class="text-white font-bold tracking-wider text-base uppercase">Expertises</h4>
+                <h4 class="text-white font-bold tracking-wider text-base uppercase cursor-default">Expertises</h4>
                 <ul class="space-y-2 text-sm font-light">
-                    <li class="flex items-center"><i class="fa-solid fa-circle text-[6px] mr-2 text-brand-gold"></i> Stratégie Métier</li>
-                    <li class="flex items-center"><i class="fa-solid fa-circle text-[6px] mr-2 text-brand-gold"></i> Pilotage d'Infrastructure</li>
-                    <li class="flex items-center"><i class="fa-solid fa-circle text-[6px] mr-2 text-brand-gold"></i> Supply Chain Globale</li>
+                    <li class="flex items-center hover:text-brand-gold transition duration-300 cursor-default"><i class="fa-solid fa-circle text-[6px] mr-2 text-brand-gold"></i> Stratégie Métier</li>
+                    <li class="flex items-center hover:text-brand-gold transition duration-300 cursor-default"><i class="fa-solid fa-circle text-[6px] mr-2 text-brand-gold"></i> Pilotage d'Infrastructure</li>
+                    <li class="flex items-center hover:text-brand-gold transition duration-300 cursor-default"><i class="fa-solid fa-circle text-[6px] mr-2 text-brand-gold"></i> Supply Chain Globale</li>
                 </ul>
             </div>
 
             <!-- Colonne 4 : Coordonnées de l'infrastructure -->
             <div class="space-y-4">
-                <h4 class="text-white font-bold tracking-wider text-base uppercase">Contact Global</h4>
+                <h4 class="text-white font-bold tracking-wider text-base uppercase cursor-default">Contact Global</h4>
                 <ul class="space-y-3 text-sm font-light">
-                    <li class="flex items-start">
-                        <i class="fa-solid fa-envelope mt-1 mr-3 text-brand-gold"></i>
+                    <li class="flex items-start hover:text-brand-gold transition duration-300 group">
+                        <i class="fa-solid fa-envelope mt-1 mr-3 text-brand-gold group-hover:scale-110 transition"></i>
                         <span>contact@akas-group.com</span>
                     </li>
                     <li class="flex items-start">
                         <i class="fa-solid fa-shield-halved mt-1 mr-3 text-brand-gold"></i>
-                        <span class="text-xs text-slate-500">Serveur de Production Sécurisé </span>
+                        <span class="text-xs text-slate-500">Serveur de Production Sécurisé (Isolé via GitHub Node)</span>
                     </li>
                 </ul>
             </div>
@@ -256,8 +235,8 @@
             <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p>&copy; 2026 AKAS GROUP. Tous droits réservés.</p>
                 <div class="flex space-x-6">
-                    <a href="#" class="hover:text-brand-gold transition">Mentions Légales</a>
-                    <a href="#" class="hover:text-brand-gold transition">Confidentialité</a>
+                    <a href="#" class="hover:text-brand-gold hover:scale-105 transform transition">Mentions Légales</a>
+                    <a href="#" class="hover:text-brand-gold hover:scale-105 transform transition">Confidentialité</a>
                 </div>
             </div>
         </div>
