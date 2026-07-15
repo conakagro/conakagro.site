@@ -30,18 +30,6 @@
     
     <!-- Bibliothèque AOS pour des animations fluides au défilement -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    
-    <style>
-        /* Styles spécifiques pour les transitions fluides du Slider */
-        .slide {
-            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-        }
-        .slide-active {
-            opacity: 1 !important;
-            pointer-events: auto !important;
-            transform: scale(1);
-        }
-    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
 
@@ -84,253 +72,208 @@
         </div>
     </section>
 
-    <!-- Section 2 : Domaines d'Intervention (Immersive Full-Screen Cinematic Slider) -->
-    <section id="services" class="relative h-screen bg-brand-dark text-white overflow-hidden flex items-center justify-center">
-        
-        <!-- En-tête de section absolute -->
-        <div class="absolute top-24 left-0 w-full z-30 text-center">
-            <span class="text-brand-cyan font-bold uppercase tracking-widest text-xs">Notre Expertise Globale</span>
-            <h2 class="text-3xl font-bold text-white sm:text-4xl mt-1 drop-shadow-md">Domaines d'Intervention</h2>
-            <div class="w-16 h-1 bg-brand-cyan mx-auto mt-3 rounded-full"></div>
-        </div>
-
-        <!-- Conteneur global des Diapos -->
-        <div class="absolute inset-0 w-full h-full z-10" id="slider-container">
+    <!-- Section 2 : Domaines d'Intervention (17 Blocs Photos Spécifiques Réorganisés) -->
+    <section id="services" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="text-brand-cyan font-bold uppercase tracking-widest text-xs hover:text-brand-blue transition duration-300 cursor-default">Nos Spécialités</span>
+                <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl mt-2 mb-4 hover:scale-105 transform transition duration-300 cursor-default">Domaines d'Intervention</h2>
+                <div class="w-16 h-1 bg-brand-cyan mx-auto rounded-full"></div>
+            </div>
             
-            <!-- Slide 1 : Bâtiment & Construction -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out slide-active">
-                <img src="https://images.pexels.com/photos/1488267/pexels-photo-1488267.png?auto=format&fit=crop&w=1920&q=80" alt="Bâtiment & Construction" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Pôle Infrastructures — 01 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Bâtiment & Construction</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Tous travaux de construction et de rénovation pour tous types de bâtiments : des villas basses élégantes aux duplex R+1 complexes, jusqu'aux immeubles résidentiels ou professionnels de grande hauteur.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- 1. Bâtiment & Construction -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/1488267/pexels-photo-1488267.png?auto=format&fit=crop&w=600&q=80" alt="Bâtiment en construction en Côte d'Ivoire" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Bâtiment & Construction</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Tous travaux de construction et de rénovation pour tous types de bâtiments (villas basses, duplex R+1, immeubles résidentiels et professionnels).</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 2 : Travaux Publics -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out">
-                <img src="https://images.pexels.com/photos/35340757/pexels-photo-35340757.jpeg?auto=format&fit=crop&w=1920&q=80" alt="Travaux Publics" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Pôle Infrastructures — 02 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Travaux Publics</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Réalisation d'infrastructures d'envergure nationale, chantiers d'aménagement urbains majeurs, Voirie et Réseaux Divers (VRD), et restructuration complète des axes routiers.</p>
+                <!-- 2. Travaux Publics -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/35340757/pexels-photo-35340757.jpeg?auto=format&fit=crop&w=600&q=80" alt="Route en construction en Côte d'Ivoire" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> 
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Travaux Publics</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Réalisation de grandes infrastructures, chantiers d'aménagement urbain, VRD et aménagement des axes routiers nationaux.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 3 : Génie Civil & Électrification -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out">
-                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1920&q=80" alt="Génie Civil & Électrification" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Pôle Énergie — 03 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Génie Civil & Électrification</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Conception et exécution d'ouvrages d'art complexes et déploiement de lignes électriques à haute performance : Basse Tension (BT), Moyenne Tension (MT) et Haute Tension (HT).</p>
+                <!-- 3. Génie Civil & Électrification (BT, MT, HT) -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80" alt="Réseaux d'électrification" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Génie Civil & Électrification</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Études d'ouvrages d'art complexes et projets d'électrification rurale ou urbaine en Basse, Moyenne et Haute Tension (BT, MT, HT).</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 4 : Assainissement -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out">
-                <img src="https://images.unsplash.com/photo-1542044896530-05d85be9b11a?auto=format&fit=crop&w=1920&q=80" alt="Assainissement" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Pôle Fluides & Environnement — 04 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Assainissement</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Ingénierie de traitement des eaux usées, construction de châteaux d'eau, stations de pompage de pointe, et déploiement de réseaux d'assainissement durables.</p>
+                <!-- 4. Assainissement -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <!-- Photo professionnelle d'un château d'eau moderne -->
+                        <img src="https://images.unsplash.com/photo-1542044896530-05d85be9b11a?auto=format&fit=crop&w=600&q=80" alt="Château d'eau pour réseau d'assainissement" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Assainissement</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Ingénierie de traitement des eaux usées, déploiement de canalisations durables et solutions d'assainissement collectif.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 5 : Location d'Engins Lourds -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out">
-                <img src="https://images.pexels.com/photos/33321433/pexels-photo-33321433.jpeg?auto=format&fit=crop&w=1920&q=80" alt="Location d'Engins Lourds" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Pôle Matériels — 05 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Location d'Engins Lourds</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Mise à disposition opérationnelle et location de matériels de gros œuvre : excavatrices, pelleteuses, grues de chantiers, bulldozers et compacteurs industriels.</p>
+                <!-- 5. Location d'Engins Lourds -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/33321433/pexels-photo-33321433.jpeg?auto=format&fit=crop&w=600&q=80" alt="Différents engins de chantier lourds" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> 
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Location d'Engins Lourds</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Location opérationnelle d'engins de terrassement, de pelleteuses, de grues et de matériels de compactage lourds.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 6 : Location de Véhicules -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out">
-                <img src="https://images.pexels.com/photos/5800943/pexels-photo-5800943.jpeg?auto=format&fit=crop&w=1920&q=80" alt="Location de Véhicules" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Pôle Matériels — 06 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Location de Véhicules</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Gestion et mise à disposition de flottes automobiles légères pour entreprises, voitures de fonction de grand standing, et utilitaires légers de transport.</p>
+                <!-- 6. Location de Véhicules -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/5800943/pexels-photo-5800943.jpeg?auto=format&fit=crop&w=600&q=80" alt="Parking avec voitures à louer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> 
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Location de Véhicules</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Mise à disposition et gestion de flottes automobiles légères, de voitures de fonction de luxe et de véhicules d'entreprise utilitaires.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 7 : Conseil & Management -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80" alt="Conseil & Management" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Pôle Corporate — 07 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Conseil & Management</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Services experts en organisation d'entreprises, pilotage stratégique de projets, audit interne et conseil en management opérationnel pour le compte de structures nationales ou internationales.</p>
+                <!-- 7. Conseil & Management -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Gestion d'entreprise" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Conseil & Management</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Prestations d'audit, de gestion d'actifs et de management opérationnel de toutes entreprises, y compris étrangères.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 8 : Élevage -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out">
-                <img src="https://images.pexels.com/photos/26706055/pexels-photo-26706055.jpeg?auto=format&fit=crop&w=1920&q=80" alt="Élevage" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Pôle Agro-Industrie — 08 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Élevage</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Mise en place de structures d'élevage modernes, gestion de fermes avicoles, bovines et porcines selon des critères d'éco-responsabilité et de sécurité alimentaire stricts.</p>
+                <!-- 8. Élevage -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/26706055/pexels-photo-26706055.jpeg?auto=format&fit=crop&w=600&q=80" alt="Élevage professionnel" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> 
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Élevage</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Mise en place et gestion de structures d'élevage modernes, de fermes avicoles et bovines selon des standards de qualité rigoureux.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 9 : Agriculture -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out">
-                <img src="https://images.pexels.com/photos/34727206/pexels-photo-34727206.jpeg?auto=format&fit=crop&w=1920&q=80" alt="Agriculture" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Pôle Agro-Industrie — 09 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Agriculture</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Développement d'exploitations agricoles à haut rendement, modernisation des techniques de culture au sol, et accompagnement de filières agricoles durables.</p>
+                <!-- 9. Agriculture -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/34727206/pexels-photo-34727206.jpeg?auto=format&fit=crop&w=600&q=80" alt="Exploitations agricoles professionnelles" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> 
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Agriculture</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Développement de cultures à haut rendement, aménagement de terres agricoles durables et optimisation des récoltes.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 10 : Logistique Routière -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out">
-                <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1920&q=80" alt="Logistique Routière" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Pôle Import-Export — 10 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Logistique Routière</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Acheminement de marchandises diverses par voies routières nationales et internationales, gestion de transit sous-régional sécurisé, et optimisation logistique du fret routier.</p>
+                <!-- 10. Logistique Routière -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80" alt="Camion de fret routier sur autoroute" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Logistique Routière</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Fret routier national et sous-régional sécurisé, transport de marchandises diverses et optimisation de flottes de livraison par voie terrestre.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 11 : Logistique Maritime -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out">
-                <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1920&q=80" alt="Logistique Maritime" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Pôle Import-Export — 11 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Logistique Maritime</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Coordination complète de frets maritimes d'envergure par porte-conteneurs, prise en charge au port autonome, gestion administrative et courtage douanier.</p>
+                <!-- 11. Logistique Maritime -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <!-- Photo d'un magnifique porte-conteneurs en mer -->
+                        <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80" alt="Bateau porte-conteneurs logistique maritime" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Logistique Maritime</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Gestion des flux d'import-export par voie maritime, chargement/déchargement de conteneurs dans les grands ports et formalités douanières.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 12 : Logistique Aérienne -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out">
-                <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=1920&q=80" alt="Logistique Aérienne" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Pôle Import-Export — 12 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Logistique Aérienne</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Transport et transit express de cargaisons par avions cargo. Gestion des formalités réglementaires à l'aéroport et acheminement immédiat des envois de grande valeur.</p>
+                <!-- 12. Logistique Aérienne -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <!-- Photo d'un avion cargo au décollage -->
+                        <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80" alt="Avion de fret logistique aérienne" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Logistique Aérienne</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Transport aérien express de marchandises de grande valeur ou d'urgence, gestion des colis sensibles et transit international rapide.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 13 : Produits & Services Informatiques -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out">
-                <img src="https://images.pexels.com/photos/3747481/pexels-photo-3747481.jpeg?auto=format&fit=crop&w=1920&q=80" alt="Produits & Services Informatiques" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Pôle Technologies — 13 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Produits & Services Informatiques</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Intégration d'infrastructures réseaux d'entreprise, fourniture complète de matériel informatique (serveurs, parcs d'ordinateurs d'affaires), et licences de logiciels.</p>
+                <!-- 13. Produits & Services Informatiques -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/3747481/pexels-photo-3747481.jpeg?auto=format&fit=crop&w=600&q=80" alt="Plusieurs ordinateurs de bureau dans un bureau" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> 
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Produits & Services Informatiques</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Achat, revente de serveurs, licences d'exploitation, parcs d'ordinateurs professionnels et solutions numériques sur mesure.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 14 : Mobilier & Matériel de Bureau -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out">
-                <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1920&q=80" alt="Mobilier & Matériel de Bureau" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Pôle Aménagement — 14 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Mobilier & Matériel de Bureau</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Aménagement d'espaces de travail fonctionnels et ergonomiques : fourniture de mobiliers haut de gamme de bureaux, fournitures courantes d'exploitation tertiaire et fournitures de bureau.</p>
+                <!-- 14. Mobilier & Matériel de Bureau -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80" alt="Matériels et mobiliers de bureau professionnels" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Mobilier & Matériel de Bureau</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Fourniture complète d'équipements de bureau, fournitures courantes de bureau et ameublement tertiaire ergonomique haut de gamme.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 15 : Entretien de Bureaux & Locaux -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out">
-                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1920&q=80" alt="Entretien de Bureaux & Locaux" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Pôle Services & Maintenance — 15 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Entretien de Bureaux & Locaux</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Prestations globales de nettoyage, de désinfection approfondie, et d'entretien quotidien d'environnements industriels, commerciaux et administratifs tertiaires.</p>
+                <!-- 15. Entretien de Bureaux & Locaux -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80" alt="Entretien de bureaux tertiaires" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Entretien de Bureaux & Locaux</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Nettoyage, désinfection et maintenance hygiénique continue des bureaux, sièges sociaux et locaux d'entreprises.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 16 : Entretien d'Espaces Verts -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out">
-                <img src="https://images.pexels.com/photos/15211861/pexels-photo-15211861.jpeg?auto=format&fit=crop&w=1920&q=80" alt="Entretien d'Espaces Verts" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Pôle Services & Maintenance — 16 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Entretien d'Espaces Verts</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Aménagement esthétique, tonte de pelouse de grande envergure, élagage paysager, et maintien régulier des espaces verts extérieurs de sièges sociaux et zones d'activités.</p>
+                <!-- 16. Entretien d'Espaces Verts -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/15211861/pexels-photo-15211861.jpeg?auto=format&fit=crop&w=600&q=80" alt="Espace vert en train d'être entretenu" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Entretien d'Espaces Verts</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Entretien d'espaces paysagers, tonte, élagage et aménagement esthétique d'espaces verts extérieurs professionnels.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 17 : Commerce Général -->
-            <div class="slide absolute inset-0 w-full h-full opacity-0 pointer-events-none scale-105 transition-all duration-1000 ease-in-out">
-                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80" alt="Commerce Général" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/90 md:bg-black/60"></div>
-                <div class="absolute inset-0 flex items-center justify-center px-6">
-                    <div class="max-w-4xl text-center bg-brand-blue/80 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl">
-                        <span class="text-brand-cyan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Négoce — 17 / 17</span>
-                        <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Commerce Général</h3>
-                        <p class="text-slate-200 text-sm md:text-lg leading-relaxed font-light">Importation, commercialisation en gros et négoce global de marchandises, de matières premières et de produits manufacturés à forte valeur économique.</p>
+                <!-- 17. Commerce Général -->
+                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80" alt="Commerce général" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Commerce Général</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Activités globales de négoce de produits, distribution de gros et de détail et facilitation des flux d'échanges marchands.</p>
                     </div>
                 </div>
+
             </div>
-
-        </div>
-
-        <!-- Flèches de navigation manuelle -->
-        <button id="prev-slide" class="absolute left-6 z-30 bg-black/40 hover:bg-brand-cyan text-white hover:text-brand-blue w-14 h-14 rounded-full flex items-center justify-center transition duration-300 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand-cyan">
-            <i class="fa-solid fa-arrow-left text-lg"></i>
-        </button>
-        <button id="next-slide" class="absolute right-6 z-30 bg-black/40 hover:bg-brand-cyan text-white hover:text-brand-blue w-14 h-14 rounded-full flex items-center justify-center transition duration-300 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand-cyan">
-            <i class="fa-solid fa-arrow-right text-lg"></i>
-        </button>
-
-        <!-- Barre de chargement/progression automatique temporelle -->
-        <div class="absolute bottom-4 left-0 w-full h-1 bg-white/10 z-30">
-            <div id="slide-progress-bar" class="h-full bg-brand-cyan transition-all duration-[6000ms] ease-linear" style="width: 0%;"></div>
         </div>
     </section>
 
@@ -509,72 +452,6 @@
         AOS.init({
             once: true, // L'animation ne se déclenche qu'une seule fois au défilement
             offset: 120 // Distance de déclenchement par rapport au bas de l'écran
-        });
-
-        // --- Logique JavaScript du Diaporama Immersif ---
-        document.addEventListener('DOMContentLoaded', () => {
-            const slides = document.querySelectorAll('.slide');
-            const prevButton = document.getElementById('prev-slide');
-            const nextButton = document.getElementById('next-slide');
-            const progressBar = document.getElementById('slide-progress-bar');
-            
-            let currentSlideIndex = 0;
-            const slideDuration = 6000; // Durée par diapositive : 6 secondes
-            let autoPlayTimer;
-
-            // Fonction pour mettre à jour la diapositive active
-            function updateSlides() {
-                slides.forEach((slide, index) => {
-                    if (index === currentSlideIndex) {
-                        slide.classList.add('slide-active');
-                    } else {
-                        slide.classList.remove('slide-active');
-                    }
-                });
-                resetProgressBar();
-            }
-
-            // Aller à la diapositive suivante
-            function nextSlide() {
-                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-                updateSlides();
-            }
-
-            // Revenir à la diapositive précédente
-            function prevSlide() {
-                currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-                updateSlides();
-            }
-
-            // Gérer la barre de progression
-            function resetProgressBar() {
-                // Arrête l'animation en cours en enlevant la transition
-                progressBar.style.transition = 'none';
-                progressBar.style.width = '0%';
-                
-                // Forcer le reflow pour que le navigateur prenne en compte le reset
-                progressBar.offsetHeight; 
-                
-                // Relance la transition et remplit la barre
-                progressBar.style.transition = `width ${slideDuration}ms linear`;
-                progressBar.style.width = '100%';
-                
-                // Réinitialiser le timer d'autoplay
-                clearInterval(autoPlayTimer);
-                autoPlayTimer = setInterval(nextSlide, slideDuration);
-            }
-
-            // Écouteurs d'événements pour les boutons
-            nextButton.addEventListener('click', () => {
-                nextSlide();
-            });
-
-            prevButton.addEventListener('click', () => {
-                prevSlide();
-            });
-
-            // Lancement initial de la barre de progression
-            resetProgressBar();
         });
     </script>
 </body>
