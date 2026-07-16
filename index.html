@@ -19,6 +19,15 @@
                             light: '#f8fafc',     /* Gris très clair pour les fonds de cartes */
                             dark: '#08172b'       /* Bleu nuit pour le footer */
                         }
+                    },
+                    animation: {
+                        'slow-pan': 'pan 30s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        pan: {
+                            '0%': { transform: 'scale(1) translate(0px, 0px)' },
+                            '100%': { transform: 'scale(1.12) translate(-10px, -5px)' }
+                        }
                     }
                 }
             }
@@ -33,250 +42,336 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
 
-    <!-- En-tête / Navigation -->
-    <header class="fixed top-0 w-full bg-brand-blue/95 backdrop-blur text-white z-50 shadow-lg border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- En-tête / Navigation Dynamique -->
+    <header id="main-header" class="fixed top-0 w-full transition-all duration-500 ease-in-out text-white z-50 py-5 border-b border-white/0 bg-transparent">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <a href="#" class="flex items-center space-x-3 group">
-                <img src="images/logo.svg" alt="AKAS GROUP" class="h-10 w-auto text-brand-silver group-hover:scale-105 transition duration-300" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
-                <span id="logo-text" class="text-xl font-bold tracking-wider text-brand-silver group-hover:text-brand-cyan transition duration-300">AKAS GROUP</span>
+                <img src="images/logo.svg" alt="AKAS GROUP" class="h-10 w-auto text-brand-silver group-hover:scale-110 transition duration-300" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+                <span id="logo-text" class="text-xl font-black tracking-[0.15em] text-white group-hover:text-brand-cyan transition duration-300">AKAS GROUP</span>
             </a>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide items-center">
-                <a href="#accueil" class="hover:text-brand-cyan hover:scale-105 transform transition duration-300">Accueil</a>
-                <a href="#services" class="hover:text-brand-cyan hover:scale-105 transform transition duration-300">Services</a>
-                <a href="#portfolio" class="hover:text-brand-cyan hover:scale-105 transform transition duration-300">Réalisations</a>
-                <a href="#contact" class="bg-brand-silver text-brand-blue px-5 py-2.5 rounded font-bold hover:bg-white hover:text-brand-cyan hover:scale-105 transform transition duration-300 shadow-md">Contact</a>
+            <nav class="hidden md:flex space-x-8 text-xs uppercase tracking-widest font-semibold items-center">
+                <a href="#accueil" class="hover:text-brand-cyan relative py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-cyan hover:after:w-full after:transition-all after:duration-300">Accueil</a>
+                <a href="#services" class="hover:text-brand-cyan relative py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-cyan hover:after:w-full after:transition-all after:duration-300">Services</a>
+                <a href="#portfolio" class="hover:text-brand-cyan relative py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-cyan hover:after:w-full after:transition-all after:duration-300">Réalisations</a>
+                <a href="#contact" class="bg-brand-cyan text-brand-dark px-6 py-3 rounded-full font-bold hover:bg-white hover:text-brand-blue hover:scale-105 transform transition duration-300 shadow-md">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Section 1 : Accueil / Héros -->
-    <section id="accueil" class="relative h-screen flex items-center justify-center bg-brand-blue text-white pt-16">
+    <!-- Section 1 : Accueil / Héros Immersif -->
+    <section id="accueil" class="relative h-screen flex items-center justify-center bg-brand-blue text-white overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80" alt="Immeubles d'affaires" class="w-full h-full object-cover opacity-25 scale-105 transition-transform duration-[5000ms]">
-            <div class="absolute inset-0 bg-gradient-to-b from-brand-blue/50 via-brand-blue/80 to-brand-blue"></div>
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80" alt="Immeubles d'affaires" class="w-full h-full object-cover opacity-20 animate-slow-pan">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-blue/70 via-brand-blue/90 to-slate-50"></div>
         </div>
-        <div class="relative max-w-7xl mx-auto text-center px-6 z-10" data-aos="fade-up" data-aos-duration="1200">
-            <!-- Nom de l'entreprise imposant -->
-            <span class="block text-brand-cyan font-black uppercase tracking-[0.25em] text-5xl md:text-8xl lg:text-9xl mb-8 hover:scale-105 transform transition duration-300 cursor-default">AKAS GROUP</span>
+        <div class="relative max-w-7xl mx-auto text-center px-6 z-10" data-aos="zoom-out" data-aos-duration="1500">
+            <!-- Badge premium -->
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-widest text-brand-cyan mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span> Groupe Panafricain Pluridisciplinaire
+            </span>
             
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-8 leading-tight hover:scale-[1.02] transform transition duration-500 cursor-default text-slate-200">
-                Bâtir l'Avenir avec <br><span class="text-brand-silver hover:text-brand-cyan transition duration-300">Rigueur</span> et <span class="text-brand-silver hover:text-brand-cyan transition duration-300">Vision</span>
+            <!-- Nom de l'entreprise imposant -->
+            <h1 class="block text-white font-black uppercase tracking-[0.2em] text-5xl md:text-8xl lg:text-9xl mb-8 leading-none">
+                AKAS <span class="text-brand-cyan">GROUP</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-300 mb-12 max-w-2xl mx-auto font-light hover:text-white transition duration-300 cursor-default">
+            
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight mb-8 leading-tight max-w-4xl mx-auto text-slate-200">
+                Bâtir l'Avenir avec <span class="text-brand-cyan">Rigueur</span> et <span class="text-brand-cyan">Vision</span>
+            </h2>
+            <p class="text-base md:text-lg text-slate-300 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
                 AKAS GROUP déploie des solutions stratégiques et opérationnelles de premier plan pour catalyser la réussite de vos projets d'envergure.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#services" class="bg-brand-silver text-brand-blue font-bold px-8 py-3.5 rounded shadow-lg hover:bg-white hover:scale-105 transform transition duration-300 text-center">Découvrir nos domaines</a>
-                <a href="#contact" class="border border-white/30 hover:border-brand-cyan text-white font-bold px-8 py-3.5 rounded hover:text-brand-cyan hover:bg-white/5 hover:scale-105 transform transition duration-300 text-center">Collaborer avec nous</a>
+            <div class="flex flex-col sm:flex-row justify-center gap-5">
+                <a href="#services" class="bg-brand-cyan text-brand-dark font-extrabold px-8 py-4 rounded-full shadow-lg hover:bg-white hover:text-brand-blue hover:scale-105 transform transition duration-300 text-center uppercase text-sm tracking-wider">
+                    Découvrir nos domaines
+                </a>
+                <a href="#contact" class="border-2 border-white/30 hover:border-brand-cyan text-white font-bold px-8 py-4 rounded-full hover:text-brand-cyan hover:bg-white/5 hover:scale-105 transform transition duration-300 text-center uppercase text-sm tracking-wider">
+                    Collaborer avec nous
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Section 2 : Domaines d'Intervention (17 Blocs Photos Spécifiques Réorganisés) -->
-    <section id="services" class="py-32 bg-white">
+    <!-- Section 2 : Domaines d'Intervention -->
+    <section id="services" class="py-32 bg-slate-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20" data-aos="fade-up">
-                <span class="text-brand-cyan font-bold uppercase tracking-widest text-xs hover:text-brand-blue transition duration-300 cursor-default">Nos Spécialités</span>
-                <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl mt-2 mb-4 hover:scale-105 transform transition duration-300 cursor-default">Domaines d'Intervention</h2>
-                <div class="w-16 h-1 bg-brand-cyan mx-auto rounded-full"></div>
+                <span class="text-brand-cyan font-extrabold uppercase tracking-[0.25em] text-xs">Nos Spécialités</span>
+                <h2 class="text-4xl font-black text-brand-blue sm:text-5xl mt-2 mb-4 tracking-tight">Domaines d'Intervention</h2>
+                <div class="w-20 h-1.5 bg-brand-cyan mx-auto rounded-full"></div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- 1. Bâtiment & Construction -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                         <!-- <img src="https://images.pexels.com/photos/1488267/pexels-photo-1488267.png?auto=format&fit=crop&w=600&q=80" alt="Bâtiment en construction en Côte d'Ivoire" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> -->
-                        <img src="images/Photo - chantier de construction - AKAS.jpg?auto=format&fit=crop&w=600&q=80" alt="Bâtiment en construction en Côte d'Ivoire" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Infrastructure</span>
+                        <img src="images/Photo - chantier de construction - AKAS.jpg?auto=format&fit=crop&w=600&q=80" alt="Bâtiment en construction en Côte d'Ivoire" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Bâtiment & Construction</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Tous travaux de construction et de rénovation pour tous types de bâtiments (villas basses, duplex R+1, immeubles résidentiels et professionnels).</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-building"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Bâtiment & Construction</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Tous travaux de construction et de rénovation pour tous types de bâtiments (villas basses, duplex R+1, immeubles résidentiels et professionnels).</p>
                     </div>
                 </div>
 
                 <!-- 2. Travaux Publics -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                          <!-- <img src="https://images.pexels.com/photos/35340757/pexels-photo-35340757.jpeg?auto=format&fit=crop&w=600&q=80" alt="Route en construction en Côte d'Ivoire" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> -->
-                        <img src="https://images.pexels.com/photos/21638577/pexels-photo-21638577.jpeg?auto=format&fit=crop&w=600&q=80" alt="Route en construction en Côte d'Ivoire" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> 
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Infrastructure</span>
+                        <img src="https://images.pexels.com/photos/21638577/pexels-photo-21638577.jpeg?auto=format&fit=crop&w=600&q=80" alt="Route en construction en Côte d'Ivoire" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"> 
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Travaux Publics</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Réalisation de grandes infrastructures, chantiers d'aménagement urbain, VRD et aménagement des axes routiers nationaux.</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-road"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Travaux Publics</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Réalisation de grandes infrastructures, chantiers d'aménagement urbain, VRD et aménagement des axes routiers nationaux.</p>
                     </div>
                 </div>
 
-                <!-- 3. Génie Civil & Électrification (BT, MT, HT) -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="images/Photo_ouvriers_électrification - AKAS.jpg?auto=format&fit=crop&w=600&q=80" alt="Réseaux d'électrification" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <!-- 3. Génie Civil & Électrification -->
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Réseaux</span>
+                        <img src="images/Photo_ouvriers_électrification - AKAS.jpg?auto=format&fit=crop&w=600&q=80" alt="Réseaux d'électrification" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Génie Civil & Électrification</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Études d'ouvrages d'art complexes et projets d'électrification rurale ou urbaine en Basse, Moyenne et Haute Tension (BT, MT, HT).</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-bolt"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Génie Civil & Élec</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Études d'ouvrages d'art complexes et projets d'électrification rurale ou urbaine en Basse, Moyenne et Haute Tension (BT, MT, HT).</p>
                     </div>
                 </div>
 
                 <!-- 4. Assainissement -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                        <!-- Photo professionnelle d'un château d'eau moderne -->
-                       <!--  <img src="https://images.unsplash.com/photo-1542044896530-05d85be9b11a?auto=format&fit=crop&w=600&q=80" alt="Château d'eau pour réseau d'assainissement" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> -->
-                        <img src="images/Photo_ouvriers_canalisation - AKAS.jpg?auto=format&fit=crop&w=600&q=80" alt="Route en construction en Côte d'Ivoire" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Réseaux</span>
+                        <img src="images/Photo_ouvriers_canalisation - AKAS.jpg?auto=format&fit=crop&w=600&q=80" alt="Château d'eau pour réseau d'assainissement" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Assainissement</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Ingénierie de traitement des eaux usées, déploiement de canalisations durables et solutions d'assainissement collectif.</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-faucet-drip"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Assainissement</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Ingénierie de traitement des eaux usées, déploiement de canalisations durables et solutions d'assainissement collectif.</p>
                     </div>
                 </div>
 
                 <!-- 5. Location d'Engins Lourds -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.pexels.com/photos/33321433/pexels-photo-33321433.jpeg?auto=format&fit=crop&w=600&q=80" alt="Différents engins de chantier lourds" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> 
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Services</span>
+                        <img src="https://images.pexels.com/photos/33321433/pexels-photo-33321433.jpeg?auto=format&fit=crop&w=600&q=80" alt="Différents engins de chantier lourds" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"> 
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Location d'Engins Lourds</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Location opérationnelle d'engins de terrassement, de pelleteuses, de grues et de matériels de compactage lourds.</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-truck-monster"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Location d'Engins Lourds</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Location opérationnelle d'engins de terrassement, de pelleteuses, de grues et de matériels de compactage lourds.</p>
                     </div>
                 </div>
 
                 <!-- 6. Location de Véhicules -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.pexels.com/photos/5800943/pexels-photo-5800943.jpeg?auto=format&fit=crop&w=600&q=80" alt="Parking avec voitures à louer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> 
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Services</span>
+                        <img src="https://images.pexels.com/photos/5800943/pexels-photo-5800943.jpeg?auto=format&fit=crop&w=600&q=80" alt="Parking avec voitures à louer" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"> 
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Location de Véhicules</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Mise à disposition et gestion de flottes automobiles légères, de voitures de fonction de luxe et de véhicules d'entreprise utilitaires.</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-car"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Location de Véhicules</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Mise à disposition et gestion de flottes automobiles légères, de voitures de fonction de luxe et de véhicules d'entreprise utilitaires.</p>
                     </div>
                 </div>
 
                 <!-- 7. Conseil & Management -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Gestion d'entreprise" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Stratégie</span>
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Gestion d'entreprise" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Conseil & Management</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Prestations d'audit, de gestion d'actifs et de management opérationnel de toutes entreprises, y compris étrangères.</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-briefcase"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Conseil & Management</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Prestations d'audit, de gestion d'actifs et de management opérationnel de toutes entreprises, y compris étrangères.</p>
                     </div>
                 </div>
 
                 <!-- 8. Élevage -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.pexels.com/photos/26706055/pexels-photo-26706055.jpeg?auto=format&fit=crop&w=600&q=80" alt="Élevage professionnel" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> 
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Agro-industrie</span>
+                        <img src="https://images.pexels.com/photos/26706055/pexels-photo-26706055.jpeg?auto=format&fit=crop&w=600&q=80" alt="Élevage professionnel" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"> 
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Élevage</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Mise en place et gestion de structures d'élevage modernes, de fermes avicoles et bovines selon des standards de qualité rigoureux.</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-cow"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Élevage</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Mise en place et gestion de structures d'élevage modernes, de fermes avicoles et bovines selon des standards de qualité rigoureux.</p>
                     </div>
                 </div>
 
                 <!-- 9. Agriculture -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.pexels.com/photos/34727206/pexels-photo-34727206.jpeg?auto=format&fit=crop&w=600&q=80" alt="Exploitations agricoles professionnelles" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> 
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Agro-industrie</span>
+                        <img src="https://images.pexels.com/photos/34727206/pexels-photo-34727206.jpeg?auto=format&fit=crop&w=600&q=80" alt="Exploitations agricoles professionnelles" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"> 
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Agriculture</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Développement de cultures à haut rendement, aménagement de terres agricoles durables et optimisation des récoltes.</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-seedling"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Agriculture</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Développement de cultures à haut rendement, aménagement de terres agricoles durables et optimisation des récoltes.</p>
                     </div>
                 </div>
 
                 <!-- 10. Logistique Routière -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80" alt="Camion de fret routier sur autoroute" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Logistique</span>
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80" alt="Camion de fret routier sur autoroute" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Logistique Routière</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Fret routier national et sous-régional sécurisé, transport de marchandises diverses et optimisation de flottes de livraison par voie terrestre.</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-truck"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Logistique Routière</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Fret routier national et sous-régional sécurisé, transport de marchandises diverses et optimisation de flottes de livraison par voie terrestre.</p>
                     </div>
                 </div>
 
                 <!-- 11. Logistique Maritime -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                        <!-- Photo d'un magnifique porte-conteneurs en mer -->
-                       <!--  <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80" alt="Bateau porte-conteneurs logistique maritime" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> -->
-                        <img src="https://images.pexels.com/photos/21234959/pexels-photo-21234959.jpeg?auto=format&fit=crop&w=600&q=80" alt="Bateau porte-conteneurs logistique maritime" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Logistique</span>
+                        <img src="https://images.pexels.com/photos/21234959/pexels-photo-21234959.jpeg?auto=format&fit=crop&w=600&q=80" alt="Bateau porte-conteneurs logistique maritime" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Logistique Maritime</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Gestion des flux d'import-export par voie maritime, chargement/déchargement de conteneurs dans les grands ports et formalités douanières.</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-ship"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Logistique Maritime</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Gestion des flux d'import-export par voie maritime, chargement/déchargement de conteneurs dans les grands ports et formalités douanières.</p>
                     </div>
                 </div>
 
                 <!-- 12. Logistique Aérienne -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                        <!-- Photo d'un avion cargo au décollage -->
-                        <!-- <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80" alt="Avion de fret logistique aérienne" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> -->
-                        <img src="https://images.pexels.com/photos/11935039/pexels-photo-11935039.jpeg?auto=format&fit=crop&w=600&q=80" alt="Avion de fret logistique aérienne" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> 
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Logistique</span>
+                        <img src="https://images.pexels.com/photos/11935039/pexels-photo-11935039.jpeg?auto=format&fit=crop&w=600&q=80" alt="Avion de fret logistique aérienne" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"> 
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Logistique Aérienne</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Transport aérien express de marchandises de grande valeur ou d'urgence, gestion des colis sensibles et transit international rapide.</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-plane"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Logistique Aérienne</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Transport aérien express de marchandises de grande valeur ou d'urgence, gestion des colis sensibles et transit international rapide.</p>
                     </div>
                 </div>
 
                 <!-- 13. Produits & Services Informatiques -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                         <!-- <img src="https://images.pexels.com/photos/3747481/pexels-photo-3747481.jpeg?auto=format&fit=crop&w=600&q=80" alt="Plusieurs ordinateurs de bureau dans un bureau" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">  -->
-                        <img src="https://images.pexels.com/photos/18471488/pexels-photo-18471488.jpeg?auto=format&fit=crop&w=600&q=80" alt="Plusieurs ordinateurs de bureau dans un bureau" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> 
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Technologie</span>
+                        <img src="https://images.pexels.com/photos/18471488/pexels-photo-18471488.jpeg?auto=format&fit=crop&w=600&q=80" alt="Plusieurs ordinateurs de bureau dans un bureau" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"> 
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Produits & Services Informatiques</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Achat, revente de serveurs, licences d'exploitation, parcs d'ordinateurs professionnels et solutions numériques sur mesure.</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-laptop-code"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Produits & Services IT</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Achat, revente de serveurs, licences d'exploitation, parcs d'ordinateurs professionnels et solutions numériques sur mesure.</p>
                     </div>
                 </div>
 
                 <!-- 14. Mobilier & Matériel de Bureau -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                         <!-- <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80" alt="Matériels et mobiliers de bureau professionnels" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> -->
-                        <img src="https://images.pexels.com/photos/5869295/pexels-photo-5869295.jpeg?auto=format&fit=crop&w=600&q=80" alt="Matériels et mobiliers de bureau professionnels" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Tertiaire</span>
+                        <img src="https://images.pexels.com/photos/5869295/pexels-photo-5869295.jpeg?auto=format&fit=crop&w=600&q=80" alt="Matériels et mobiliers de bureau professionnels" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Mobilier & Matériel de Bureau</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Fourniture complète d'équipements de bureau, fournitures courantes de bureau et ameublement tertiaire ergonomique haut de gamme.</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-chair"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Mobilier & Matériel</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Fourniture complète d'équipements de bureau, fournitures courantes de bureau et ameublement tertiaire ergonomique haut de gamme.</p>
                     </div>
                 </div>
 
                 <!-- 15. Entretien de Bureaux & Locaux -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80" alt="Entretien de bureaux tertiaires" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Tertiaire</span>
+                        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80" alt="Entretien de bureaux tertiaires" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Entretien de Bureaux & Locaux</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Nettoyage, désinfection et maintenance hygiénique continue des bureaux, sièges sociaux et locaux d'entreprises.</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-sparkles"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Entretien des Locaux</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Nettoyage, désinfection et maintenance hygiénique continue des bureaux, sièges sociaux et locaux d'entreprises.</p>
                     </div>
                 </div>
 
                 <!-- 16. Entretien d'Espaces Verts -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.pexels.com/photos/15211861/pexels-photo-15211861.jpeg?auto=format&fit=crop&w=600&q=80" alt="Espace vert en train d'être entretenu" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Tertiaire</span>
+                        <img src="https://images.pexels.com/photos/15211861/pexels-photo-15211861.jpeg?auto=format&fit=crop&w=600&q=80" alt="Espace vert en train d'être entretenu" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Entretien d'Espaces Verts</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Entretien d'espaces paysagers, tonte, élagage et aménagement esthétique d'espaces verts extérieurs professionnels.</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-tree"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Espaces Verts</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Entretien d'espaces paysagers, tonte, élagage et aménagement esthétique d'espaces verts extérieurs professionnels.</p>
                     </div>
                 </div>
 
                 <!-- 17. Commerce Général -->
-                <div class="bg-brand-light rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transform transition duration-300 group overflow-hidden" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80" alt="Commerce général" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <div class="bg-white rounded-2xl border border-slate-200/60 shadow-md hover:shadow-2xl hover:border-brand-cyan/40 hover:-translate-y-2 transform transition-all duration-300 group overflow-hidden" data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <span class="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">Négoce</span>
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80" alt="Commerce général" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-cyan transition duration-300">Commerce Général</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-950 transition duration-300">Activités globales de négoce de produits, distribution de gros et de détail et facilitation des flux d'échanges marchands.</p>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-blue text-lg group-hover:bg-brand-cyan group-hover:text-white transition duration-300"><i class="fa-solid fa-store"></i></span>
+                            <h3 class="text-xl font-bold text-brand-blue group-hover:text-brand-cyan transition duration-300">Commerce Général</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed font-light">Activités globales de négoce de produits, distribution de gros et de détail et facilitation des flux d'échanges marchands.</p>
                     </div>
                 </div>
 
@@ -285,67 +380,74 @@
     </section>
 
     <!-- Section 3 : Réalisations -->
-    <section id="portfolio" class="py-32 bg-brand-light">
-        <div class="max-w-7xl mx-auto px-6">
+    <section id="portfolio" class="py-32 bg-brand-blue text-white relative">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-900 via-brand-dark to-brand-dark opacity-50 z-0"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center mb-20" data-aos="fade-up">
-                <span class="text-brand-cyan font-bold uppercase tracking-widest text-xs hover:text-brand-blue transition duration-300 cursor-default">Portfolio</span>
-                <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl mt-2 mb-4 hover:scale-105 transform transition duration-300 cursor-default">Nos Projets de Référence</h2>
-                <div class="w-16 h-1 bg-brand-cyan mx-auto rounded-full"></div>
+                <span class="text-brand-cyan font-bold uppercase tracking-[0.25em] text-xs">Portfolio</span>
+                <h2 class="text-4xl font-black text-white sm:text-5xl mt-2 mb-4">Nos Projets de Référence</h2>
+                <div class="w-20 h-1.5 bg-brand-cyan mx-auto rounded-full"></div>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Projet 1 : Chantiers BTP & Génie Civil -->
-                <div class="group relative overflow-hidden bg-brand-dark rounded-xl shadow-md aspect-[4/3]" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80" alt="Chantier de génie civil" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90 group-hover:opacity-40">
-                    <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-transparent">
-                        <h4 class="text-xl font-bold text-white mb-1 group-hover:text-brand-cyan group-hover:scale-105 transform transition duration-300 origin-left">Génie Civil & BTP</h4>
-                        <p class="text-sm text-brand-silver tracking-wide uppercase font-medium">Bâtiments & infrastructures publiques</p>
+                <div class="group relative overflow-hidden bg-brand-dark rounded-2xl shadow-xl aspect-[4/3] border border-white/10" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80" alt="Chantier de génie civil" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70 group-hover:opacity-40">
+                    <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent">
+                        <span class="text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest mb-2 block">BTP & Infrastructures</span>
+                        <h4 class="text-2xl font-bold text-white group-hover:text-brand-cyan transform transition duration-300 origin-left">Génie Civil</h4>
+                        <p class="text-xs text-brand-silver font-light mt-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">Bâtiments & infrastructures publiques majeures.</p>
                     </div>
                 </div>
 
                 <!-- Projet 2 : Électrification Réseaux -->
-                <div class="group relative overflow-hidden bg-brand-dark rounded-xl shadow-md aspect-[4/3]" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80" alt="Lignes d'électrification électrique" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90 group-hover:opacity-40">
-                    <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-transparent">
-                        <h4 class="text-xl font-bold text-white mb-1 group-hover:text-brand-cyan group-hover:scale-105 transform transition duration-300 origin-left">Réseaux Électriques HT/MT</h4>
-                        <p class="text-sm text-brand-silver tracking-wide uppercase font-medium">Électrification et pylônes techniques</p>
+                <div class="group relative overflow-hidden bg-brand-dark rounded-2xl shadow-xl aspect-[4/3] border border-white/10" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80" alt="Lignes d'électrification électrique" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70 group-hover:opacity-40">
+                    <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent">
+                        <span class="text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest mb-2 block">Réseaux</span>
+                        <h4 class="text-2xl font-bold text-white group-hover:text-brand-cyan transform transition duration-300 origin-left">Réseaux Électriques HT/MT</h4>
+                        <p class="text-xs text-brand-silver font-light mt-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">Électrification et pylônes techniques stratégiques.</p>
                     </div>
                 </div>
 
                 <!-- Projet 3 : Conseil, Audit & Management -->
-                <div class="group relative overflow-hidden bg-brand-dark rounded-xl shadow-md aspect-[4/3]" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Consultants en management stratégique" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90 group-hover:opacity-40">
-                    <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-transparent">
-                        <h4 class="text-xl font-bold text-white mb-1 group-hover:text-brand-cyan group-hover:scale-105 transform transition duration-300 origin-left">Gestion & Conseil Corporate</h4>
-                        <p class="text-sm text-brand-silver tracking-wide uppercase font-medium">Management de structures privées</p>
+                <div class="group relative overflow-hidden bg-brand-dark rounded-2xl shadow-xl aspect-[4/3] border border-white/10" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Consultants en management stratégique" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70 group-hover:opacity-40">
+                    <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent">
+                        <span class="text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest mb-2 block">Management</span>
+                        <h4 class="text-2xl font-bold text-white group-hover:text-brand-cyan transform transition duration-300 origin-left">Conseil Corporate</h4>
+                        <p class="text-xs text-brand-silver font-light mt-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">Gouvernance, audit et optimisation de structures privées.</p>
                     </div>
                 </div>
 
                 <!-- Projet 4 : IT, Systèmes informatiques & Distribution -->
-                <div class="group relative overflow-hidden bg-brand-dark rounded-xl shadow-md aspect-[4/3]" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="Matériel informatique et serveurs" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90 group-hover:opacity-40">
-                    <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-transparent">
-                        <h4 class="text-xl font-bold text-white mb-1 group-hover:text-brand-cyan group-hover:scale-105 transform transition duration-300 origin-left">Fourniture Informatique & Tech</h4>
-                        <p class="text-sm text-brand-silver tracking-wide uppercase font-medium">Équipements réseaux et bureautique</p>
+                <div class="group relative overflow-hidden bg-brand-dark rounded-2xl shadow-xl aspect-[4/3] border border-white/10" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="Matériel informatique et serveurs" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70 group-hover:opacity-40">
+                    <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent">
+                        <span class="text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest mb-2 block">Technologie</span>
+                        <h4 class="text-2xl font-bold text-white group-hover:text-brand-cyan transform transition duration-300 origin-left">Fourniture IT & Tech</h4>
+                        <p class="text-xs text-brand-silver font-light mt-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">Équipements de réseaux et parcs informatiques résilients.</p>
                     </div>
                 </div>
 
                 <!-- Projet 5 : Import-Export & Logistique Fret -->
-                <div class="group relative overflow-hidden bg-brand-dark rounded-xl shadow-md aspect-[4/3]" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80" alt="Cargo maritime de marchandises" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90 group-hover:opacity-40">
-                    <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-transparent">
-                        <h4 class="text-xl font-bold text-white mb-1 group-hover:text-brand-cyan group-hover:scale-105 transform transition duration-300 origin-left">Logistique & Import-Export</h4>
-                        <p class="text-sm text-brand-silver tracking-wide uppercase font-medium">Négoce et fret maritime de marchandises</p>
+                <div class="group relative overflow-hidden bg-brand-dark rounded-2xl shadow-xl aspect-[4/3] border border-white/10" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80" alt="Cargo maritime de marchandises" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70 group-hover:opacity-40">
+                    <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent">
+                        <span class="text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest mb-2 block">Commerce</span>
+                        <h4 class="text-2xl font-bold text-white group-hover:text-brand-cyan transform transition duration-300 origin-left">Import-Export</h4>
+                        <p class="text-xs text-brand-silver font-light mt-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">Fret maritime de marchandises et négoce international.</p>
                     </div>
                 </div>
 
                 <!-- Projet 6 : Agriculture moderne & Agro-alimentaire -->
-                <div class="group relative overflow-hidden bg-brand-dark rounded-xl shadow-md aspect-[4/3]" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80" alt="Exploitations agricoles et assainissement" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90 group-hover:opacity-40">
-                    <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-transparent">
-                        <h4 class="text-xl font-bold text-white mb-1 group-hover:text-brand-cyan group-hover:scale-105 transform transition duration-300 origin-left">Développement Agricole</h4>
-                        <p class="text-sm text-brand-silver tracking-wide uppercase font-medium">Exploitations durables et assainissement</p>
+                <div class="group relative overflow-hidden bg-brand-dark rounded-2xl shadow-xl aspect-[4/3] border border-white/10" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80" alt="Exploitations agricoles et assainissement" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70 group-hover:opacity-40">
+                    <div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent">
+                        <span class="text-brand-cyan text-[10px] font-extrabold uppercase tracking-widest mb-2 block">Agro-industrie</span>
+                        <h4 class="text-2xl font-bold text-white group-hover:text-brand-cyan transform transition duration-300 origin-left">Développement Agricole</h4>
+                        <p class="text-xs text-brand-silver font-light mt-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">Exploitations durables et assainissement rural.</p>
                     </div>
                 </div>
 
@@ -357,12 +459,12 @@
     <section id="contact" class="py-32 bg-white">
         <div class="max-w-3xl mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-brand-cyan font-bold uppercase tracking-widest text-xs hover:text-brand-blue transition duration-300 cursor-default">Partenariat</span>
-                <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl mt-2 mb-4 hover:scale-105 transform transition duration-300 cursor-default">Formulaire de Liaison</h2>
-                <div class="w-16 h-1 bg-brand-cyan mx-auto rounded-full"></div>
+                <span class="text-brand-cyan font-extrabold uppercase tracking-[0.25em] text-xs">Partenariat</span>
+                <h2 class="text-4xl font-black text-brand-blue sm:text-5xl mt-2 mb-4 tracking-tight">Formulaire de Liaison</h2>
+                <div class="w-20 h-1.5 bg-brand-cyan mx-auto rounded-full"></div>
             </div>
             
-            <form action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST" class="space-y-6 bg-brand-light p-8 md:p-10 rounded-2xl border border-slate-100 shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up">
+            <form action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST" class="space-y-6 bg-brand-light p-8 md:p-12 rounded-3xl border border-slate-100 shadow-xl hover:shadow-2xl transition duration-300" data-aos="fade-up">
                 <div>
                     <label for="name" class="block text-sm font-semibold text-brand-blue mb-2">Identité ou Raison sociale</label>
                     <div class="relative">
@@ -381,7 +483,7 @@
                     <label for="message" class="block text-sm font-semibold text-brand-blue mb-2">Expression de votre besoin</label>
                     <textarea name="message" id="message" rows="5" required class="w-full p-4 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan bg-white transition" placeholder="Détaillez votre demande ici..."></textarea>
                 </div>
-                <button type="submit" class="w-full bg-brand-blue hover:bg-brand-cyan text-white hover:text-brand-blue font-bold py-4 rounded-xl shadow-md hover:scale-[1.02] transform transition duration-300 tracking-wide uppercase text-sm">
+                <button type="submit" class="w-full bg-brand-blue hover:bg-brand-cyan text-white hover:text-brand-blue font-bold py-4 rounded-xl shadow-md hover:scale-[1.02] transform transition duration-300 tracking-wider uppercase text-sm">
                     Transmettre la requête
                 </button>
             </form>
@@ -391,44 +493,44 @@
     <!-- Pied de page riche institutionnel -->
     <footer class="bg-brand-dark text-slate-400 border-t border-slate-800">
         <!-- Partie supérieure de la grille -->
-        <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-4 gap-12">
             <!-- Colonne 1 : À propos corporatif -->
-            <div class="space-y-4">
-                <h4 class="text-white font-bold tracking-wider text-base uppercase hover:text-brand-cyan transition duration-300 cursor-default">AKAS GROUP</h4>
-                <p class="text-sm text-slate-400 font-light leading-relaxed hover:text-slate-200 transition duration-300 cursor-default">
+            <div class="space-y-6">
+                <h4 class="text-white font-extrabold tracking-wider text-base uppercase">AKAS GROUP</h4>
+                <p class="text-sm text-slate-400 font-light leading-relaxed">
                     Société de conseil, ingénierie de projets et négoce international engagée dans la réussite de vos chantiers stratégiques.
                 </p>
                 <div class="flex space-x-4 text-slate-400 pt-2">
-                    <a href="#" class="hover:text-brand-cyan hover:scale-120 transform transition text-lg"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#" class="hover:text-brand-cyan hover:scale-120 transform transition text-lg"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-brand-cyan hover:scale-120 transform transition text-xl"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-brand-cyan hover:scale-120 transform transition text-xl"><i class="fa-brands fa-x-twitter"></i></a>
                 </div>
             </div>
             
             <!-- Colonne 2 : Liens rapides -->
-            <div class="space-y-4">
-                <h4 class="text-white font-bold tracking-wider text-base uppercase cursor-default">Navigation</h4>
-                <ul class="space-y-2 text-sm font-light">
-                    <li><a href="#accueil" class="hover:text-brand-cyan hover:translate-x-2 transform transition inline-flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-cyan/60"></i> Accueil</a></li>
-                    <li><a href="#services" class="hover:text-brand-cyan hover:translate-x-2 transform transition inline-flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-cyan/60"></i> Nos Services</a></li>
-                    <li><a href="#portfolio" class="hover:text-brand-cyan hover:translate-x-2 transform transition inline-flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-cyan/60"></i> Réalisations</a></li>
-                    <li><a href="#contact" class="hover:text-brand-cyan hover:translate-x-2 transform transition inline-flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-cyan/60"></i> Contact</a></li>
+            <div class="space-y-6">
+                <h4 class="text-white font-extrabold tracking-wider text-base uppercase">Navigation</h4>
+                <ul class="space-y-3 text-sm font-light">
+                    <li><a href="#accueil" class="hover:text-brand-cyan hover:translate-x-2 transform transition inline-flex items-center"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-brand-cyan"></i> Accueil</a></li>
+                    <li><a href="#services" class="hover:text-brand-cyan hover:translate-x-2 transform transition inline-flex items-center"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-brand-cyan"></i> Nos Services</a></li>
+                    <li><a href="#portfolio" class="hover:text-brand-cyan hover:translate-x-2 transform transition inline-flex items-center"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-brand-cyan"></i> Réalisations</a></li>
+                    <li><a href="#contact" class="hover:text-brand-cyan hover:translate-x-2 transform transition inline-flex items-center"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-brand-cyan"></i> Contact</a></li>
                 </ul>
             </div>
 
             <!-- Colonne 3 : Domaines clés -->
-            <div class="space-y-4">
-                <h4 class="text-white font-bold tracking-wider text-base uppercase cursor-default">Expertises</h4>
-                <ul class="space-y-2 text-sm font-light">
-                    <li class="flex items-center hover:text-brand-cyan transition duration-300 cursor-default"><i class="fa-solid fa-circle text-[6px] mr-2 text-brand-cyan"></i> Bâtiment & BTP</li>
-                    <li class="flex items-center hover:text-brand-cyan transition duration-300 cursor-default"><i class="fa-solid fa-circle text-[6px] mr-2 text-brand-cyan"></i> Conseil & Technologies</li>
-                    <li class="flex items-center hover:text-brand-cyan transition duration-300 cursor-default"><i class="fa-solid fa-circle text-[6px] mr-2 text-brand-cyan"></i> Négoce & Logistique</li>
+            <div class="space-y-6">
+                <h4 class="text-white font-extrabold tracking-wider text-base uppercase">Expertises</h4>
+                <ul class="space-y-3 text-sm font-light">
+                    <li class="flex items-center"><i class="fa-solid fa-circle text-[6px] mr-3 text-brand-cyan"></i> Bâtiment & BTP</li>
+                    <li class="flex items-center"><i class="fa-solid fa-circle text-[6px] mr-3 text-brand-cyan"></i> Conseil & Technologies</li>
+                    <li class="flex items-center"><i class="fa-solid fa-circle text-[6px] mr-3 text-brand-cyan"></i> Négoce & Logistique</li>
                 </ul>
             </div>
 
             <!-- Colonne 4 : Coordonnées de l'infrastructure -->
-            <div class="space-y-4">
-                <h4 class="text-white font-bold tracking-wider text-base uppercase cursor-default">Contact Global</h4>
-                <ul class="space-y-3 text-sm font-light">
+            <div class="space-y-6">
+                <h4 class="text-white font-extrabold tracking-wider text-base uppercase">Contact Global</h4>
+                <ul class="space-y-4 text-sm font-light">
                     <li class="flex items-start hover:text-brand-cyan transition duration-300 group">
                         <i class="fa-solid fa-envelope mt-1 mr-3 text-brand-cyan group-hover:scale-110 transition"></i>
                         <span>contact@akas-group.com</span>
@@ -446,19 +548,34 @@
             <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p>&copy; 2026 AKAS GROUP. Tous droits réservés.</p>
                 <div class="flex space-x-6">
-                    <a href="#" class="hover:text-brand-cyan hover:scale-105 transform transition">Mentions Légales</a>
-                    <a href="#" class="hover:text-brand-cyan hover:scale-105 transform transition">Confidentialité</a>
+                    <a href="#" class="hover:text-brand-cyan transition">Mentions Légales</a>
+                    <a href="#" class="hover:text-brand-cyan transition">Confidentialité</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts nécessaires pour l'initialisation des animations AOS -->
+    <!-- Scripts pour l'initialisation des animations AOS & Effet Scroll Header -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        // Initialisation de l'AOS
         AOS.init({
-            once: true, // L'animation ne se déclenche qu'une seule fois au défilement
-            offset: 120 // Distance de déclenchement par rapport au bas de l'écran
+            once: true,
+            offset: 120
+        });
+
+        // Script de Header dynamique au scroll
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                // Header blanc translucide avec effet "frost" au défilement
+                header.classList.remove('bg-transparent', 'py-5', 'border-white/0');
+                header.classList.add('bg-brand-blue/95', 'backdrop-blur-md', 'py-3.5', 'shadow-xl', 'border-b', 'border-white/10');
+            } else {
+                // Retour à l'état initial (transparent et plus aéré)
+                header.classList.remove('bg-brand-blue/95', 'backdrop-blur-md', 'py-3.5', 'shadow-xl', 'border-b', 'border-white/10');
+                header.classList.add('bg-transparent', 'py-5', 'border-white/0');
+            }
         });
     </script>
 </body>
